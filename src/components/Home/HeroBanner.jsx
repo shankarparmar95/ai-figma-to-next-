@@ -32,7 +32,7 @@ const HeroBanner = () => {
           </p>
           <Link
             href="/shop"
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 shadow-lg"
+            className="inline-block bg-[#05527C] text-white font-bold py-3 px-8 rounded-md transition duration-300 transform hover:scale-105 shadow-lg"
           >
             SHOP NOW
           </Link>

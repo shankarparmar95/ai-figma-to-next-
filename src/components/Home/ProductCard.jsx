@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
-const ProductCard = ({ 
+const ProductCard = ({
   productName = "Crystal Bead Strand",
   sku = "JB-2024-CRYSTAL",
   inStock = true,
   priceBreaks = [
     { quantity: 2, price: 2.28 },
     { quantity: 4, price: 1.52 },
-    { quantity: 12, price: 1.26 }
+    { quantity: 12, price: 1.26 },
   ],
-  imageUrl = "/product-placeholder.jpg"
+  imageUrl = "/product-placeholder.jpg",
 }) => {
   const [quantity, setQuantity] = useState(1);
 
@@ -48,29 +48,29 @@ const ProductCard = ({
 
         {/* Stock Status */}
         <div className="flex items-center justify-center mb-3">
-          <span className={`inline-block w-2 h-2 rounded-full mr-2 ${inStock ? 'bg-green-500' : 'bg-red-500'}`}></span>
-          <span className="text-sm">{inStock ? 'In Stock' : 'Out of Stock'}</span>
+          <span
+            className={`inline-block w-2 h-2 rounded-full mr-2 ${
+              inStock ? "bg-green-500" : "bg-red-500"
+            }`}
+          ></span>
+          <span className="text-sm">
+            {inStock ? "In Stock" : "Out of Stock"}
+          </span>
         </div>
 
         {/* Price Breaks */}
-        <div className="mb-4">
+        <div className="mb-4 bg-[#EDEDED] grid grid-cols-2 text-center py-3 px-5">
           {priceBreaks.map((breakdown, index) => (
-            <p key={index} className="text-sm text-gray-600 text-center">
+            <div key={index} className="text-sm text-gray-600 text-center">
+              {Math.abs(index % 2) == 1 && <span>|</span>}
               {breakdown.quantity} at ${breakdown.price.toFixed(2)}
-            </p>
+            </div>
           ))}
         </div>
 
         {/* Quantity Selector */}
         <div className="mb-4 flex justify-center">
           <div className="flex items-center border border-gray-300 rounded-md">
-            <button 
-              onClick={() => setQuantity(Math.max(1, quantity - 1))}
-              className="px-3 py-1 text-gray-600 hover:bg-gray-100"
-              disabled={quantity <= 1}
-            >
-              -
-            </button>
             <input
               type="number"
               min="1"
@@ -78,21 +78,19 @@ const ProductCard = ({
               onChange={handleQuantityChange}
               className="w-12 text-center border-x border-gray-300 py-1 outline-none"
             />
-            <button 
-              onClick={() => setQuantity(quantity + 1)}
-              className="px-3 py-1 text-gray-600 hover:bg-gray-100"
-            >
-              +
-            </button>
           </div>
         </div>
 
         {/* Add to Cart Button */}
         <button
-          className={`mt-auto w-full py-2 px-4 rounded-md font-medium text-white ${inStock ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-400 cursor-not-allowed'}`}
+          className={`mt-auto w-full py-2 px-4 rounded-md font-bold text-white ${
+            inStock
+              ? "bg-[#05527C] text-white"
+              : "bg-gray-400 cursor-not-allowed"
+          }`}
           disabled={!inStock}
         >
-          {inStock ? 'ADD TO CART' : 'OUT OF STOCK'}
+          {inStock ? "ADD TO CART" : "OUT OF STOCK"}
         </button>
       </div>
     </div>

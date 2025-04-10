@@ -12,7 +12,8 @@ const FeaturedProducts = () => {
       priceBreaks: [
         { quantity: 1, price: 12.99 },
         { quantity: 3, price: 11.50 },
-        { quantity: 5, price: 10.25 }
+        { quantity: 5, price: 10.25 },
+        { quantity: 4, price: 8.25 }
       ],
       imageUrl: "/assests/images/product1.png"
     },

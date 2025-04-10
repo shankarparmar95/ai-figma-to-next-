@@ -19,7 +19,6 @@ const FeaturedProduct = () => {
               className="object-left"
             />
 
-
             {/* Navigation Arrows */}
             <button className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition">
               <FiChevronLeft className="w-5 h-5 text-gray-700" />
@@ -46,7 +45,7 @@ const FeaturedProduct = () => {
 
             <div className="mt-4">
               <Link href="/shop/crystal-lane-strands">
-                <div className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-md transition duration-200 transform hover:scale-105">
+                <div className="inline-block bg-[#05527C] text-white font-bold py-3 px-8 rounded-md transition duration-200 transform hover:scale-105">
                   SHOP NOW
                 </div>
               </Link>

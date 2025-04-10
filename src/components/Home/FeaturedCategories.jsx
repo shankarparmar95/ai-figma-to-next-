@@ -47,29 +47,24 @@ const FeaturedCategories = () => {
   ];
 
   return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-gray-900 mb-8">
-        FEATURED
-      </h2>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {categories.map((category, index) => (
-          <Link
-            href={category.slug}
+    <section className="w-full px-4 py-6 max-w-7xl mx-auto">
+      <h2 className="text-xl font-bold mb-4">FEATURED</h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {categories.map((item, index) => (
+          <div
             key={index}
-            className="block relative rounded overflow-hidden group h-48"
+            className="relative w-full aspect-[4/3] overflow-hidden rounded "
           >
             <img
-              src={category.image}
-              alt={category.title}
-              className="w-full h-full opacity-80 object-cover transition-transform duration-300 group-hover:scale-110"
+              src={item.image}
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105 backdrop "
             />
-            <div className="absolute inset-0 flex items-end p-3">
-              <h3 className="text-white font-medium text-lg">
-                {category.title}
-              </h3>
+            <div className="absolute bottom-0 left-0 right-0 top-0 w-full bg-black/40"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 p-2 text-white text-xl font-extrabold ">
+              {item.title}
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </section>

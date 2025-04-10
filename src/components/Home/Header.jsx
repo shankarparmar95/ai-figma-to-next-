@@ -1,10 +1,12 @@
-import React from 'react';
-import { FiSearch, FiUser, FiShoppingCart } from 'react-icons/fi';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { FiSearch, FiUser, FiShoppingCart } from "react-icons/fi";
 
-const Header = ({ 
-  userName = 'Evelyn', 
-  userId = '#333333', 
-  cartItemCount = 3 
+const Header = ({
+  userName = "Evelyn",
+  userId = "#333333",
+  cartItemCount = 3,
 }) => {
   return (
     <header className="bg-white shadow-sm">
@@ -17,18 +19,17 @@ const Header = ({
 
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/">
-              <img 
-                src="/assests/images/logo.png" 
-                alt="John Bead" 
-                className="h-12 w-auto"
-                // In a real implementation, you'd use next/image:
-                // <Image src="/john-bead-logo.png" alt="John Bead" width={150} height={48} />
+            <Link href="/">
+              <Image
+                src="/assests/images/logo.png"
+                alt="John Bead"
+                width={150}
+                height={48}
               />
-            </a>
+            </Link>
           </div>
 
           {/* Search bar - centered on desktop, full width on mobile */}
@@ -65,7 +66,9 @@ const Header = ({
                   </span>
                 )}
               </div>
-              <span className="hidden md:inline text-sm font-medium">Cart ({cartItemCount})</span>
+              <span className="hidden md:inline text-sm font-medium">
+                Cart ({cartItemCount})
+              </span>
             </div>
           </div>
         </div>

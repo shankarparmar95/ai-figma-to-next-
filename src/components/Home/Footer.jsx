@@ -138,7 +138,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                className="bg-blue-900 text-white px-6 h-10 hover:bg-blue-800 text-sm"
+                className="bg-[#05527C] text-white font-bold px-6 h-10 text-sm"
               >
                 JOIN
               </button>
